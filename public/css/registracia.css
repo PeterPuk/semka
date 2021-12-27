@@ -1,0 +1,118 @@
+/*---------------HLAVNY OBSAH------------*/
+
+
+/*vsetky ktore nie su typu checkbox*/
+input:not([type="checkbox"]){
+    background: #fff;
+    border:5px solid gray;
+    width: 250px;
+    height:80px;
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 15px;
+    background: #E4DDED;
+}
+
+input:focus{
+    outline: black 8px solid;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    background: #78747D;
+    border:5px solid #F3EBFC;
+    font-size: 30px;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    color:white;
+    background: black;
+    padding: 15px 25px;
+    margin-bottom: 0px;
+}
+
+.registracia{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 81px;
+    color:#B6AFBD;
+    background: none;
+}
+p{
+    font-size: 30px;
+    color: white;
+}
+
+
+.zleCislo{
+    font-size: 30px;
+    color: red;
+
+}
+
+.dobreCislo{
+    font-size: 30px;
+    color: #E4DDED;;
+
+}
+@media (min-width: 425px) and (max-width: 768px){
+    h1{
+        margin-left: 29px;
+        font-size: 40px;
+        text-align: left;
+    }
+
+    input:not([type="checkbox"]){
+        width: 400px;
+    }
+}
+
+@media (max-width: 425px){
+    h1{
+        font-size: 40px;
+        margin-top: 15px;
+    }
+}
+@media (min-width: 769px) and (max-width: 991px){
+    input:not([type="checkbox"]){
+        background: #fff;
+        border:5px solid gray;
+        width: 400px;
+        height:80px;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        margin-left: 220px;
+        border-radius: 15px;
+        background: #E4DDED;
+    }
+
+    input[type="submit"]{
+        cursor: pointer;
+        background: #78747D;
+        border:5px solid #F3EBFC;
+        margin-left: 220px;
+    }
+
+}
+
+
+@media (min-width: 1024px){
+    input:not([type="checkbox"]){
+        background: #fff;
+        border:5px solid gray;
+        width: 250px;
+        height:80px;
+        padding: 15px 20px;
+        margin: 20px;
+        border-radius: 15px;
+        background: #E4DDED;
+    }
+    input[type="submit"]{
+        cursor: pointer;
+        background: #78747D;
+        border:5px solid #F3EBFC;
+        border-radius: 15px;
+    }
+}
