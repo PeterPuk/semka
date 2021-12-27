@@ -1,0 +1,121 @@
+
+body{
+    background-image: url("../Obrazky/pozadie.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+
+}
+
+/*---------------Stylovanie hlavicky --------*/
+
+.hlavne{
+    font-size:30px;
+    color:#F3EBFC;
+    text-decoration: none;
+
+}
+
+.hlavne:hover{
+    text-decoration: underline;
+    color:#F3EBFC;
+}
+
+/*---------------Stylovanie hlavicky KONIEC --------*/
+.bielePozadie{
+    background: white;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 15px 15px;
+}
+.logoNike{
+    background-image: url("../obrazky/nikeLogoZmensene.jpg");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+
+}
+
+.logoAdidas{
+    background-image: url("../obrazky/adidasLogoZmensene.jpg");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+
+}
+
+.logoJordan{
+    background-image: url("../obrazky/jordanLogo.jpg");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+
+}
+
+.logoNike{
+    background-image: url("../obrazky/nikeLogoZmensene.jpg");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+
+}
+
+.logoVans{
+    background-image: url("../obrazky/vanLogoZmensene.jpg");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+
+}
+ul{
+    font-size:45px;
+    color:white;
+
+}
+
+
+.zafarbeny{
+    background: white;
+    padding-top: 40px;
+}
+
+li{
+    font-size:30px;
+    color:#3B393D;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.float{
+    float:left;
+    margin-right: 25px;
+}
+
+
+
+h3{
+    font-size: 50px;
+    font-weight: bolder;
+    color:#3B393D;
+    margin-left: 20px;
+}
+
+a{
+    font-size:30px;
+    color:#3B393D;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    color:#3B393D;
+}
+/*---------------Stylovanie footeru KONIEC --------*/

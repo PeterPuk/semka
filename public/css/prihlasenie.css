@@ -1,0 +1,70 @@
+input:not([type="checkbox"]){
+    background: #E4DDED;
+    border:none;
+    width: 300px;
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgba(30, 139, 195, 0.6);
+    border:5px solid gray;
+}
+
+input:focus{
+    outline: black 8px solid;
+}
+
+label{
+    cursor: pointer;
+    display: block;
+    text-align: left;
+    margin-left: 25px;
+    padding-left: 0;
+    color:#B6AFBD;
+    font-size: 30px;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    width: 350px;
+    margin: auto;
+    background: #78747D;
+    border: 3px solid #E4DDED;
+    font-size: 35px;
+}
+
+.obalovac{
+    width: 300px;
+    margin: auto;
+
+}
+
+.prihlasenie{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 81px;
+    color:#B6AFBD;
+    background: none;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    color:white;
+    background: black;
+    padding: 15px 25px;
+    margin-bottom: 0px;
+}
+
+p{
+    color: red;
+    font-size: 20px;
+}
+
+
+@media (max-width: 600px){
+    h1{
+        font-size: 35px;
+        margin-left: -15px;
+        margin-top: 15px;
+    }
+}
