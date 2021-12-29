@@ -46,15 +46,16 @@ p{
 }
 
 
-.zleCislo{
-    font-size: 30px;
+.chyba{
     color: red;
-
+    font-size: 15px;
+    display: block;
+    margin-left: 20px;
 }
 
-.dobreCislo{
-    font-size: 30px;
-    color: #E4DDED;;
+.uspesne{
+    color: white;
+    font-size: 40px;
 
 }
 @media (min-width: 425px) and (max-width: 768px){

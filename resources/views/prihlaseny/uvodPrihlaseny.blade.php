@@ -1,4 +1,4 @@
-@extends('HlavickyAFootre.layoutNeprihlaseny')
+@extends('HlavickyAFootre.layoutPrihlaseny')
 <head>
     <meta charset="UTF-8">
     <!-- CSS only -->
@@ -15,11 +15,10 @@
 
     <link rel="stylesheet" href="{{asset('css/uvod.css')}}" type="text/css">
 </head>
+
 @section('hlavnyObsah')
     <!DOCTYPE html>
     <html lang="en">
-
-    <body>
     <script>
         window.addEventListener('scroll', () => {
             let obsah = document.querySelector('.rowSpecial');
@@ -42,7 +41,7 @@
             }
         });
     </script>
-
+    <body>
     <!--Hlavny obsah-->
     <h1 class="hlavnyNadpis">
         Obchod, kde sa sny o teniskách stávajú realitou.
@@ -129,10 +128,6 @@
         <!--Hlavny obsah KONIEC-->
 
     </div>
-
-
     @endsection
-    <!--Footer-->
     </body>
     </html>
-

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginRegisterControler;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,19 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/uvod', function () {
+Route::get('/', function () {
     return view('/hlavne/uvod');
 });
 
-Route::get('/prihlasenie', function (){
-    return view('hlavne/prihlasenie');
-});
 
-Route::get('/registracia', function (){
-    return view('hlavne/registracia');
-});
+Route::get('/hlavne/prihlasenie', [LoginRegisterControler::class,'login'])->name('hlavne.prihlasenie');
+Route::get('/hlavne/registracia',[LoginRegisterControler::class,'register'])->name('hlavne.registracia');
+Route::post('/hlavne/ulozit', [LoginRegisterControler::class,'save'])->name('hlavne.ulozit');
+Route::post('/hlavne/skontroluj', [LoginRegisterControler::class,'check'])->name('hlavne.skontroluj');
 
-
+Route::get('/prihlaseny/uvodPrihlaseny',[LoginRegisterControler::class,'uvodPrihlaseny'])->name('prihlaseny.uvodPrihlaseny');
+Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',[LoginRegisterControler::class,'uvodPrihlasenyAdmin'])->name('prihlasenyAdmin.uvodPrihlasenyAdmin');
 
 
 
