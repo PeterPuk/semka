@@ -18,6 +18,7 @@ class LoginRegisterControler extends Controller
         return view('hlavne.registracia');
     }
 
+
     function save(Request $request){
         //return $request->input();
         $request->validate([
