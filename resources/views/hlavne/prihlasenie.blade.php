@@ -1,4 +1,4 @@
-@extends('HlavickyAFootre.layoutNeprihlaseny')
+@extends('HlavickyAFootre.HlavnyLayoutUvod')
 <head>
     <meta charset="UTF-8">
     <title>SneakField/Registracia </title>

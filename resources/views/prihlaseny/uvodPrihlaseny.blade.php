@@ -1,4 +1,5 @@
 @extends('HlavickyAFootre.layoutPrihlaseny')
+
 <head>
     <meta charset="UTF-8">
     <!-- CSS only -->

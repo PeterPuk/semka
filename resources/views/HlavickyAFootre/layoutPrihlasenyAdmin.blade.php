@@ -43,9 +43,8 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href ="/">
-                            <img src="/Obrazky/logoZmensene.jpg" alt="" width="80" height="72">
-
+                        <a class="navbar-brand" href="/">
+                            <img src="/obrazky/logoZmensene.jpg" alt="" width="80" height="72">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNav"

@@ -1,4 +1,4 @@
-@extends('HlavickyAFootre.layoutNeprihlaseny')
+@extends('HlavickyAFootre.HlavnyLayoutUvod')
 <head>
     <meta charset="UTF-8">
     <title>SneakField/Registracia </title>
@@ -16,7 +16,6 @@
 
     <link rel="stylesheet" href="{{asset('css/registracia.css')}}">
 </head>
-
 @section('hlavnyObsah')
     <body>
     <!--koniec hlavicky-->
