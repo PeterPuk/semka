@@ -6,18 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Zakaznik;
 use Illuminate\Support\Facades\DB;
 
-class LoginRegisterControler extends Controller
+class ZakaznikControler extends Controller
 {
-    function login(){
 
-        return view('hlavne.prihlasenie');
+    function logout(){
+            if(session()->has('idPrihlaseneho')){
+                session()->pull('idPrihlaseneho');
+                return redirect('/hlavne/prihlasenie');
+            }
+
     }
-
-    function register(){
-
-        return view('hlavne.registracia');
-    }
-
 
     function save(Request $request){
         //return $request->input();
@@ -58,6 +56,7 @@ class LoginRegisterControler extends Controller
         }
 
         if($nasielSaAdmin){
+            $request>session()->put('idPrihlaseneho', $nasielSaZakaznik->id);
             return redirect('/prihlasenyAdmin/uvodPrihlasenyAdmin');
         }else if($nasielSaZakaznik){
             $request>session()->put('idPrihlaseneho', $nasielSaZakaznik->id);
@@ -67,12 +66,14 @@ class LoginRegisterControler extends Controller
         }
     }
 
-    function uvodPrihlaseny(){
-        return view('prihlaseny.uvodPrihlaseny');
+    function getAll(){
+            $zakaznici = Zakaznik::all();
+            return view('/prihlasenyAdmin/Zakaznici',['zakaznici'=>$zakaznici]);
     }
 
-    function uvodPrihlasenyAdmin(){
-        return view('prihlasenyAdmin.uvodPrihlasenyAdmin');
+    function delete($id){
+        DB::table('zakazniks')->where('id', '=', $id)->delete();
+        return redirect('/prihlasenyAdmin/Zakaznici');
     }
 
 

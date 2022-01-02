@@ -1,6 +1,4 @@
-
 <link rel="stylesheet" href="{{asset('css/footerAheader.css')}}" type="text/css">
-
 <header>
     <div class="top-bar nav-down">
         <div class="container-fluid">

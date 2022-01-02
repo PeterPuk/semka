@@ -1,7 +1,7 @@
 @extends('HlavickyAFootre.HlavnyLayoutUvod')
 <head>
     <meta charset="UTF-8">
-    <title>SneakField/Registracia </title>
+    <title>SneakField/Prihlasenie </title>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
