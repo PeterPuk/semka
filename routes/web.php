@@ -21,9 +21,19 @@ Route::get('/hlavne/odhlasenie', [ZakaznikControler::class,'logout'])->name('hla
 
 Route::post('/hlavne/ulozit', [ZakaznikControler::class,'save'])->name('hlavne.ulozit');
 Route::post('/hlavne/skontroluj', [ZakaznikControler::class,'check'])->name('hlavne.skontroluj');
+Route::post('/prihlaseny/updateMeno', [ZakaznikControler::class,'updateMeno'])->name('prihlaseny.updateMeno');
+Route::post('/prihlaseny/updatePriezvisko', [ZakaznikControler::class,'updatePriezvisko'])->name('prihlaseny.updatePriezvisko');
+Route::post('/prihlaseny/updatePriezvisko', [ZakaznikControler::class,'updatePriezvisko'])->name('prihlaseny.updatePriezvisko');
+Route::post('/prihlaseny/updateMail', [ZakaznikControler::class,'updateMail'])->name('prihlaseny.updateMail');
+Route::post('/prihlaseny/updateCislo', [ZakaznikControler::class,'updateTelCislo'])->name('prihlaseny.updateCislo');
+Route::post('/prihlaseny/updateHeslo', [ZakaznikControler::class,'updateHeslo'])->name('prihlaseny.updateHeslo');
+
+/*--------------------UPDATE ZAKAZNIK-----------*/
 
 
 Route::get('/prihlaseny/uvodPrihlaseny',function(){return view('/prihlaseny/uvodPrihlaseny');});
+
+Route::get('/prihlaseny/profil',[ZakaznikControler::class,'getAllDva'])->name('/prihlaseny/profil');
 
 /*---------ADMIN---------------------------------*/
 Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyAdmin/uvodPrihlasenyAdmin');});
