@@ -7,7 +7,6 @@
 
 
 .obalovac{
-
     margin-left: 90px;
 }
 
@@ -71,4 +70,26 @@ h1{
     visibility: hidden;
 }
 
+.maleMenu{
+    display: block;
+    color: white;
+    font-size: 35px;
 
+
+}
+
+.maleMenu:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.maleM{
+    width: 1000px;
+    margin: auto;
+}
+
+.pridatTenisku{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -58,7 +58,7 @@ class ZakaznikControler extends Controller
             return redirect('/prihlasenyAdmin/uvodPrihlasenyAdmin');
         }else if($nasielSaZakaznik){
             $request->session()->put('idPrihlaseneho', $nasielSaZakaznik->id);
-            return redirect('/prihlaseny/profil');
+            return redirect('/prihlaseny/uvodPrihlaseny');
         }else{
             return back()->with('chyba','Zadali ste zlé prihlasovacie údaje.');
         }
@@ -69,10 +69,17 @@ class ZakaznikControler extends Controller
             return view('/prihlasenyAdmin/Zakaznici',['zakaznici'=>$zakaznici]);
     }
 
-    function getAllDva(){
+    function getAllDva(int $volba){
         $zakaznici = Zakaznik::all();
-        return view('/prihlaseny/profil',['zakaznici'=>$zakaznici]);
+        if($volba == 1){
+            return view('/prihlaseny/profil',['zakaznici'=>$zakaznici]);
+            //return redirect()->route('/prihlaseny/profil',['zakaznici'=>$zakaznici]);
+        }else {
+             return view('/prihlasenyAdmin/profilAdmin',['zakaznici'=>$zakaznici]);
+            //return redirect()->route('/prihlasenyAdmin/profilAdmin', ['zakaznici' => $zakaznici]);
+        }
     }
+
 
     function updateMeno(Request $request){
         $request->validate(['meno'=>'required|between:1,255']);

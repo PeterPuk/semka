@@ -18,7 +18,7 @@ Route::get('/hlavne/registracia',function(){return view('hlavne/registracia');})
 Route::get('/hlavne/prihlasenie',function(){return view('hlavne.prihlasenie');});
 Route::get('/hlavne/odhlasenie', [ZakaznikControler::class,'logout'])->name('hlavne.prihlasenie');
 
-
+/*--------------------ZAKAZNIK-----------*/
 Route::post('/hlavne/ulozit', [ZakaznikControler::class,'save'])->name('hlavne.ulozit');
 Route::post('/hlavne/skontroluj', [ZakaznikControler::class,'check'])->name('hlavne.skontroluj');
 Route::post('/prihlaseny/updateMeno', [ZakaznikControler::class,'updateMeno'])->name('prihlaseny.updateMeno');
@@ -27,15 +27,17 @@ Route::post('/prihlaseny/updatePriezvisko', [ZakaznikControler::class,'updatePri
 Route::post('/prihlaseny/updateMail', [ZakaznikControler::class,'updateMail'])->name('prihlaseny.updateMail');
 Route::post('/prihlaseny/updateCislo', [ZakaznikControler::class,'updateTelCislo'])->name('prihlaseny.updateCislo');
 Route::post('/prihlaseny/updateHeslo', [ZakaznikControler::class,'updateHeslo'])->name('prihlaseny.updateHeslo');
-
-/*--------------------UPDATE ZAKAZNIK-----------*/
-
-
 Route::get('/prihlaseny/uvodPrihlaseny',function(){return view('/prihlaseny/uvodPrihlaseny');});
-
-Route::get('/prihlaseny/profil',[ZakaznikControler::class,'getAllDva'])->name('/prihlaseny/profil');
+Route::get('/prihlaseny/uvodPrihlaseny',function(){return view('/prihlaseny/uvodPrihlaseny');});
+Route::get('/prihlaseny/{volba}',[ZakaznikControler::class,'getAllDva']);
 
 /*---------ADMIN---------------------------------*/
 Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyAdmin/uvodPrihlasenyAdmin');});
+Route::get('/prihlasenyAdmin/pridatTenisku',function(){return view('/prihlasenyAdmin/pridatTenisku');});
+
 Route::get('/prihlasenyAdmin/Zakaznici',[ZakaznikControler::class,'getAll'])->name('/prihlasenyAdmin/Zakaznici');
 Route::get('/prihlasenyAdmin/delete/{id}',[ZakaznikControler::class,'delete']);
+Route::get('/prihlasenyAdmin/getAllDva/{volba}',[ZakaznikControler::class,'getAllDva']);
+/*---------TENISKY-----------------*/
+//Route::get('/prihlasenyAdmin/Tenisky',[ZakaznikControler::class,'getAll'])->name('/prihlasenyAdmin/Tenisky');
+Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/Tenisky');});
