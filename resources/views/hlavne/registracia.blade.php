@@ -67,8 +67,7 @@
                 <div class="col-12 col-sm-12 col-lg-1 col-xl-1"></div>
 
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3">
-                    <input type="text" name="priezvisko" placeholder="priezvisko" required
-                           value="{{old('priezvisko')}}">
+                    <input type="text" name="priezvisko" placeholder="priezvisko" required value="{{old('priezvisko')}}">
                     <span class="chyba">@error('priezvisko'){{$message}} @enderror</span>
                 </div>
 

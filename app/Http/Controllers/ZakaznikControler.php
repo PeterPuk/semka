@@ -76,7 +76,6 @@ class ZakaznikControler extends Controller
 
     function updateMeno(Request $request){
         $request->validate(['meno'=>'required|between:1,255']);
-        $id = $request->id;
         DB::table('zakazniks')
             ->where('id', $request->id)
             ->update(['meno' => $request->meno]);

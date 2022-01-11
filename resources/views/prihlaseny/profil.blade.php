@@ -28,7 +28,7 @@
     <img src="/obrazky/profil.png" alt="" class="obrazokProfil">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="col-12 col-sm-12 col-md-7 col-lg-7">
 
                 @foreach ($zakaznici as $zakaznik)
                     @if($zakaznik->id == session()->get('idPrihlaseneho'))
@@ -41,7 +41,7 @@
                     @endif
                 @endforeach
             </div>
-            <div class=" col-12 col-sm-12  col-md-6 col-lg-6">
+            <div class=" col-12 col-sm-12  col-md-5 col-lg-5">
                 <div class="obalovac">
                     <form action="{{route('prihlaseny.updateMeno')}}" method="post">
                         @csrf
@@ -49,7 +49,7 @@
                                required>
                         <input type="text" name="meno" placeholder="meno" required>
                         <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
-
+                        <span class="chyba">@error('meno'){{$message}} @enderror</span>
                     </form>
                 </div>
                 <div class="obalovac">
@@ -59,6 +59,7 @@
                                required>
                         <input type="text" name="priezvisko" placeholder="priezvisko" required>
                         <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
+                        <span class="chyba">@error('priezvisko'){{$message}} @enderror</span>
                     </form>
                 </div>
                 <div class="obalovac">
@@ -68,6 +69,7 @@
                                required>
                         <input type="email" name="mail" placeholder="email" required>
                         <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
+                        <span class="chyba">@error('mail'){{$message}} @enderror</span>
                     </form>
                 </div>
                 <div class="obalovac">
@@ -77,6 +79,7 @@
                                required>
                         <input type="text" name="tel_cislo" placeholder="tel_cislo" required>
                         <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
+                        <span class="chyba">@error('tel_cislo'){{$message}} @enderror</span>
                     </form>
 
                 </div>
@@ -87,6 +90,7 @@
                                required>
                         <input type="text" name="heslo" placeholder="heslo" required>
                         <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
+                        <span class="chyba">@error('heslo'){{$message}} @enderror</span>
                     </form>
                 </div>
             </div>

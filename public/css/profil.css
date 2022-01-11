@@ -7,7 +7,24 @@
 
 
 .obalovac{
-    margin: 15px 15px;
+
+    margin-left: 90px;
+}
+
+@media (max-width: 800px){
+    .obalovac{
+        margin-left: 0px;
+    }
+    .skryty{
+        display: block;
+    }
+}
+
+.chyba{
+    color: red;
+    font-size: 15px;
+    display: block;
+    margin-left: 210px;
 }
 
 
