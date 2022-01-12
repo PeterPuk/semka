@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <form action="{{route('hlavne.ulozit')}}" method="post">
+        <form action="{{route('prihlasenyAdmin.ulozit')}}" enctype="multipart/form-data"  method="post">
 
             @if(Session::get('uspesne'))
                 <div class="uspesne">
@@ -67,7 +67,7 @@
                 <div class="col-12 col-sm-12 col-lg-1 col-xl-1"></div>
 
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3">
-                    <input type="number" name="velkost" placeholder="velkost" required value="{{old('velskot')}}">
+                    <input type="number" name="velkost" placeholder="velkost" required value="{{old('velkost')}}">
                     <span class="chyba">@error('velkost'){{$message}} @enderror</span>
                 </div>
 
@@ -87,7 +87,7 @@
                 <div class="col-12 col-sm-12 col-lg-1 col-xl-1"></div>
 
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3">
-                    <input type="text" name="znacka" placeholder="znacka "
+                    <input type="text" name="znacka" placeholder="znacka"
                            required value="{{old('znacka')}}"> <br>
                     <span class="chyba">@error('znacka'){{$message}} @enderror</span>
                 </div>
@@ -95,7 +95,7 @@
                 <div class=" col-12 col-sm-12 col-lg-1 col-xl-1"></div>
 
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3">
-                    <input type="text" placeholder="obrazok" name="obrazok" required>
+                    <input type="file" placeholder="obrazok" name="obrazok" required>
                     <span class="chyba">@error('obrazok'){{$message}} @enderror</span>
                 </div>
 

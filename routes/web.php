@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZakaznikControler;
+use \App\Http\Controllers\TopankaControler;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +40,7 @@ Route::get('/prihlasenyAdmin/Zakaznici',[ZakaznikControler::class,'getAll'])->na
 Route::get('/prihlasenyAdmin/delete/{id}',[ZakaznikControler::class,'delete']);
 Route::get('/prihlasenyAdmin/getAllDva/{volba}',[ZakaznikControler::class,'getAllDva']);
 /*---------TENISKY-----------------*/
-//Route::get('/prihlasenyAdmin/Tenisky',[ZakaznikControler::class,'getAll'])->name('/prihlasenyAdmin/Tenisky');
 Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/Tenisky');});
+Route::post('/prihlasenyAdmin/ulozit', [TopankaControler::class,'save'])->name('prihlasenyAdmin.ulozit');
+Route::get('/prihlasenyAdmin/Tenisky',[TopankaControler::class,'getAll'])->name('/prihlasenyAdmin/Tenisky');
+Route::get('/prihlasenyAdmin/delete/{id}',[TopankaControler::class,'delete']);

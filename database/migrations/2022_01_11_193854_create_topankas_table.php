@@ -20,6 +20,7 @@ class CreateTopankasTable extends Migration
             $table->text('nazov');
             $table->text('znacka');
             $table->text('obrazok');
+            $table->timestamps();
         });
     }
 

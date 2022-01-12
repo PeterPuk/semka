@@ -35,17 +35,30 @@
     <table class="table table-striped table-dark  table-hover overflow-x:auto">
         <thead>
         <tr>
-            <th>id_zakaznik</th>
-            <th>meno</th>
-            <th>priezvisko</th>
-            <th>mail</th>
-            <th>tel_cislo</th>
-            <th>heslo</th>
-            <th colspan="1">Operácia</th>
+            <th>id</th>
+            <th>cena</th>
+            <th>velkost</th>
+            <th>nazov</th>
+            <th>znacka</th>
+            <th>obrazok</th>
+            <th>operacia</th>
         </tr>
         </thead>
         <tbody>
-
+        @foreach ($topanky as $topanka)
+            <tr class="w-auto">
+                <td>{{ $topanka->id }}</td>
+                <td>{{ $topanka->cena }}</td>
+                <td>{{ $topanka->velkost }}</td>
+                <td>{{ $topanka->nazov }}</td>
+                <td>{{ $topanka->znacka }}</td>
+                <td>{{ $topanka->obrazok }}</td>
+                <td>
+                    <a href="delete/{{$topanka->id}}"
+                       class="btn btn-danger">Vymazať
+                    </a>
+                </td>
+        @endforeach
         </tbody>
     </table>
 
