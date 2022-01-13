@@ -22,12 +22,6 @@
     <h1 class="hlavnyNadpis">
         Administrátor
     </h1>
-    <div class="menuM">
-        <a href="/prihlasenyAdmin/Tenisky" class="maleMenu">Tenisky</a>
-        <a href="#" class="maleMenu">Objednávky</a>
-        <a href="#" class="maleMenu">Hodnotenia</a>
-    </div>
-
     <img src="/obrazky/profil.png" alt="" class="obrazokProfil">
 
     <div class="container-fluid">

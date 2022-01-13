@@ -13,6 +13,7 @@ return [
     |
     */
 
+
     'accepted' => 'The :attribute must be accepted.',
     'accepted_if' => 'The :attribute must be accepted when :other is :value.',
     'active_url' => 'The :attribute is not a valid URL.',
@@ -25,7 +26,7 @@ return [
     'before' => 'The :attribute must be a date before :date.',
     'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
     'between' => [
-        'numeric' => 'Vaše :attribute musí mať min. :min a najviac :max znakov',
+        'numeric' => 'Vaša :attribute musí mať hodnotu minimalne :min a najviac :max ',
         'file' => 'The :attribute must be between :min and :max kilobytes.',
         'string' => 'Vaše :attribute musí mať min. :min a najviac :max znakov.',
         'array' => 'The :attribute must have between :min and :max items.',
@@ -106,7 +107,7 @@ return [
     'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
-    'regex' => ' :attribute format nie je spravny',
+    'regex' => ' :attribute nesmie byt zaporna',
     'required' => ':attribute pole nesmie byt prazdne',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',

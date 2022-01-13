@@ -64,19 +64,13 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Domov</a>
+                                    <a class="nav-link" aria-current="page" href="/prihlasenyAdmin/Tenisky">Tenisky</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Dámske</a>
+                                    <a class="nav-link" href="#">Objednávky</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Panske.html">Pánske</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Kontakt</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">O nás</a>
+                                    <a class="nav-link" href="#">Hodnotenia</a>
                                 </li>
                             </ul>
                         </div>

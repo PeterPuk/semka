@@ -27,11 +27,14 @@
 }
 
 
-/*vsetky ktore nie su typu checkbox*/
 input:not([type="submit"]){
     height: 33px;
     margin-right: 15px;
 
+}
+
+.select{
+    margin-left: -50px;
 }
 
 input:focus{
@@ -83,10 +86,6 @@ h1{
     color: white;
 }
 
-.maleM{
-    width: 1000px;
-    margin: auto;
-}
 
 .pridatTenisku{
     display: flex;

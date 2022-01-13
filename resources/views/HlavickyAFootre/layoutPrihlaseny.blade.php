@@ -65,10 +65,10 @@
                                     <a class="nav-link" aria-current="page" href="#">Domov</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Dámske</a>
+                                    <a class="nav-link" href="/prihlaseny/damskePrihlaseny">Dámske</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Panske.html">Pánske</a>
+                                    <a class="nav-link" href="/prihlaseny/panskePrihlaseny">Pánske</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Kontakt</a>

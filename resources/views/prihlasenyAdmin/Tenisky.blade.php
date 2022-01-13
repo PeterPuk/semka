@@ -25,7 +25,6 @@
     <h1 class="hlavnyNadpis">
         Tenisky
     </h1>
-
     <div class="pridatTenisku">
         <a href="/prihlasenyAdmin/pridatTenisku"
            class="btn btn-secondary">Pridať tenisku
@@ -36,11 +35,13 @@
         <thead>
         <tr>
             <th>id</th>
-            <th>cena</th>
+            <th>cena v € </th>
             <th>velkost</th>
             <th>nazov</th>
             <th>znacka</th>
             <th>obrazok</th>
+            <th>pohlavie(zena-1, muz -0)</th>
+            <th>mnozstvo(ks)</th>
             <th>operacia</th>
         </tr>
         </thead>
@@ -53,6 +54,8 @@
                 <td>{{ $topanka->nazov }}</td>
                 <td>{{ $topanka->znacka }}</td>
                 <td>{{ $topanka->obrazok }}</td>
+                <td>{{$topanka->pohlavie}}</td>
+                <td>{{$topanka->mnozstvo}}</td>
                 <td>
                     <a href="delete/{{$topanka->id}}"
                        class="btn btn-danger">Vymazať

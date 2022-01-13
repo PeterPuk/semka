@@ -18,8 +18,11 @@ Route::get('/', function () {return view('/hlavne/uvod');});
 Route::get('/hlavne/registracia',function(){return view('hlavne/registracia');});
 Route::get('/hlavne/prihlasenie',function(){return view('hlavne.prihlasenie');});
 Route::get('/hlavne/odhlasenie', [ZakaznikControler::class,'logout'])->name('hlavne.prihlasenie');
+Route::get('/hlavne/panske',[TopankaControler::class,'getPanske'])->name('/hlavne/panske');
+Route::get('/hlavne/damske',[TopankaControler::class,'getDamske'])->name('/hlavne/damske');
 
 /*--------------------ZAKAZNIK-----------*/
+
 Route::post('/hlavne/ulozit', [ZakaznikControler::class,'save'])->name('hlavne.ulozit');
 Route::post('/hlavne/skontroluj', [ZakaznikControler::class,'check'])->name('hlavne.skontroluj');
 Route::post('/prihlaseny/updateMeno', [ZakaznikControler::class,'updateMeno'])->name('prihlaseny.updateMeno');
@@ -30,7 +33,9 @@ Route::post('/prihlaseny/updateCislo', [ZakaznikControler::class,'updateTelCislo
 Route::post('/prihlaseny/updateHeslo', [ZakaznikControler::class,'updateHeslo'])->name('prihlaseny.updateHeslo');
 Route::get('/prihlaseny/uvodPrihlaseny',function(){return view('/prihlaseny/uvodPrihlaseny');});
 Route::get('/prihlaseny/uvodPrihlaseny',function(){return view('/prihlaseny/uvodPrihlaseny');});
-Route::get('/prihlaseny/{volba}',[ZakaznikControler::class,'getAllDva']);
+Route::get('/prihlaseny/getAllDva/{volba}',[ZakaznikControler::class,'getAllDva']);
+Route::get('/prihlaseny/panskePrihlaseny',[TopankaControler::class,'getPanskePrihlaseny'])->name('/prihlaseny/panskePrihlaseny');
+Route::get('/prihlaseny/damskePrihlaseny',[TopankaControler::class,'getDamske'])->name('/prihlaseny/damskePrihlaseny');
 
 /*---------ADMIN---------------------------------*/
 Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyAdmin/uvodPrihlasenyAdmin');});
@@ -44,3 +49,4 @@ Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/T
 Route::post('/prihlasenyAdmin/ulozit', [TopankaControler::class,'save'])->name('prihlasenyAdmin.ulozit');
 Route::get('/prihlasenyAdmin/Tenisky',[TopankaControler::class,'getAll'])->name('/prihlasenyAdmin/Tenisky');
 Route::get('/prihlasenyAdmin/delete/{id}',[TopankaControler::class,'delete']);
+

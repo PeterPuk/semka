@@ -9,4 +9,8 @@ class Topanka extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $fillable = [
+        'cena', 'velkost', 'nazov','znacka','obrazok','pohlavie','mnozstvo'
+    ];
 }
