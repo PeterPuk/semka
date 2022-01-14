@@ -22,28 +22,29 @@ Route::get('/hlavne/panske',[TopankaControler::class,'getPanske'])->name('/hlavn
 Route::get('/hlavne/damske',[TopankaControler::class,'getDamske'])->name('/hlavne/damske');
 
 /*--------------------ZAKAZNIK-----------*/
-
 Route::post('/hlavne/ulozit', [ZakaznikControler::class,'save'])->name('hlavne.ulozit');
 Route::post('/hlavne/skontroluj', [ZakaznikControler::class,'check'])->name('hlavne.skontroluj');
 Route::post('/prihlaseny/updateMeno', [ZakaznikControler::class,'updateMeno'])->name('prihlaseny.updateMeno');
-Route::post('/prihlaseny/updatePriezvisko', [ZakaznikControler::class,'updatePriezvisko'])->name('prihlaseny.updatePriezvisko');
 Route::post('/prihlaseny/updatePriezvisko', [ZakaznikControler::class,'updatePriezvisko'])->name('prihlaseny.updatePriezvisko');
 Route::post('/prihlaseny/updateMail', [ZakaznikControler::class,'updateMail'])->name('prihlaseny.updateMail');
 Route::post('/prihlaseny/updateCislo', [ZakaznikControler::class,'updateTelCislo'])->name('prihlaseny.updateCislo');
 Route::post('/prihlaseny/updateHeslo', [ZakaznikControler::class,'updateHeslo'])->name('prihlaseny.updateHeslo');
 Route::get('/prihlaseny/uvodPrihlaseny',function(){return view('/prihlaseny/uvodPrihlaseny');});
-Route::get('/prihlaseny/uvodPrihlaseny',function(){return view('/prihlaseny/uvodPrihlaseny');});
-Route::get('/prihlaseny/getAllDva/{volba}',[ZakaznikControler::class,'getAllDva']);
+Route::get('/prihlaseny/profil',[ZakaznikControler::class,'getAll'])->name('/prihlaseny/profil');
 Route::get('/prihlaseny/panskePrihlaseny',[TopankaControler::class,'getPanskePrihlaseny'])->name('/prihlaseny/panskePrihlaseny');
-Route::get('/prihlaseny/damskePrihlaseny',[TopankaControler::class,'getDamske'])->name('/prihlaseny/damskePrihlaseny');
+Route::get('/prihlaseny/damskePrihlaseny',[TopankaControler::class,'getDamskePrihlaseny'])->name('/prihlaseny/damskePrihlaseny');
 
 /*---------ADMIN---------------------------------*/
 Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyAdmin/uvodPrihlasenyAdmin');});
 Route::get('/prihlasenyAdmin/pridatTenisku',function(){return view('/prihlasenyAdmin/pridatTenisku');});
 
-Route::get('/prihlasenyAdmin/Zakaznici',[ZakaznikControler::class,'getAll'])->name('/prihlasenyAdmin/Zakaznici');
+Route::post('/prihlasenyAdmin/updateMailAdmin', [ZakaznikControler::class,'updateMailAdmin'])->name('prihlasenyAdmin.updateMailAdmin');
+Route::post('/prihlasenyAdmin/updateHesloAdmin', [ZakaznikControler::class,'updateHesloAdmin'])->name('prihlasenyAdmin.updateHesloAdmin');
+
+
+Route::get('/prihlasenyAdmin/profilAdmin',[ZakaznikControler::class,'getAllAdmin'])->name('/prihlasenyAdmin/profilAdmin');
+Route::get('/prihlasenyAdmin/Zakaznici',[ZakaznikControler::class,'getAllZakaznici'])->name('/prihlasenyAdmin/Zakaznici');
 Route::get('/prihlasenyAdmin/delete/{id}',[ZakaznikControler::class,'delete']);
-Route::get('/prihlasenyAdmin/getAllDva/{volba}',[ZakaznikControler::class,'getAllDva']);
 /*---------TENISKY-----------------*/
 Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/Tenisky');});
 Route::post('/prihlasenyAdmin/ulozit', [TopankaControler::class,'save'])->name('prihlasenyAdmin.ulozit');

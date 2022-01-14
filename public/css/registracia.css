@@ -13,6 +13,10 @@ input:not([type="checkbox"]){
     background: #E4DDED;
 }
 
+label{
+    color: white;
+}
+
 input:focus{
     outline: black 8px solid;
 }

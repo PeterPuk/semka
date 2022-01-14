@@ -27,66 +27,31 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-7 col-lg-7">
-
                 @foreach ($zakaznici as $zakaznik)
                     @if($zakaznik->id == session()->get('idPrihlaseneho'))
                         <tr class="w-auto">
-                            <p>{{ $zakaznik->meno }}</p>
-                            <p>{{ $zakaznik->priezvisko }}</p>
                             <p>{{ $zakaznik->mail }}</p>
-                            <p>{{ $zakaznik->tel_cislo }}</p>
                             <p>{{ $zakaznik->heslo }}</p>
                     @endif
                 @endforeach
             </div>
             <div class=" col-12 col-sm-12  col-md-5 col-lg-5">
                 <div class="obalovac">
-                    <form action="{{route('prihlaseny.updateMeno')}}" method="post">
+                    <form action="{{route('prihlasenyAdmin.updateMailAdmin')}}" method="post">
                         @csrf
                         <input class="skryty" type="text" name="id" value="{{session()->get('idPrihlaseneho')}}"
-                               required>
-                        <input type="text" name="meno" placeholder="meno" required>
-                        <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
-                        <span class="chyba">@error('meno'){{$message}} @enderror</span>
-                    </form>
-                </div>
-                <div class="obalovac">
-                    <form action="{{route('prihlaseny.updatePriezvisko')}}" method="post">
-                        @csrf
-                        <input class="skryty" type="text" name="id" value="{{session()->get('idPrihlaseneho')}}"
-                               required>
-                        <input type="text" name="priezvisko" placeholder="priezvisko" required>
-                        <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
-                        <span class="chyba">@error('priezvisko'){{$message}} @enderror</span>
-                    </form>
-                </div>
-                <div class="obalovac">
-                    <form action="{{route('prihlaseny.updateMail')}}" method="post">
-                        @csrf
-                        <input class="skryty" type="text" name="id" value="{{session()->get('idPrihlaseneho')}}"
-                               required>
+                               required >
                         <input type="email" name="mail" placeholder="email" required>
                         <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
                         <span class="chyba">@error('mail'){{$message}} @enderror</span>
                     </form>
                 </div>
                 <div class="obalovac">
-                    <form action="{{route('prihlaseny.updateCislo')}}" method="post">
+                    <form action="{{route('prihlasenyAdmin.updateHesloAdmin')}}" method="post">
                         @csrf
                         <input class="skryty" type="text" name="id" value="{{session()->get('idPrihlaseneho')}}"
                                required>
-                        <input type="text" name="tel_cislo" placeholder="tel_cislo" required>
-                        <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
-                        <span class="chyba">@error('tel_cislo'){{$message}} @enderror</span>
-                    </form>
-
-                </div>
-                <div class="obalovac">
-                    <form action="{{route('prihlaseny.updateHeslo')}}" method="post">
-                        @csrf
-                        <input class="skryty" type="text" name="id" value="{{session()->get('idPrihlaseneho')}}"
-                               required>
-                        <input type="text" name="heslo" placeholder="heslo" required>
+                        <input type="text" name="heslo" placeholder="heslo" required >
                         <input class=" btn btn-success" type="submit" name="upravit" value="Upraviť">
                         <span class="chyba">@error('heslo'){{$message}} @enderror</span>
                     </form>

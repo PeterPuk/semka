@@ -51,11 +51,13 @@
                 <td>{{ $zakaznik->mail }}</td>
                 <td>{{ $zakaznik->tel_cislo }}</td>
                 <td>{{ $zakaznik->heslo }}</td>
+                @if($zakaznik->id !=6)
                 <td>
                     <a href="delete/{{$zakaznik->id}}"
                        class="btn btn-danger">Vymazať
                     </a>
                 </td>
+            @endif
         @endforeach
         </tbody>
     </table>

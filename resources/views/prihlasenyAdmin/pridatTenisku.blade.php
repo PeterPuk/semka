@@ -59,11 +59,18 @@
 
             @csrf
                 <div class="row">
-                    <div class=" col-12 col-sm-12 col-lg-5 col-xl-5"></div>
+                    <div class=" col-12 col-sm-12 col-lg-3 col-xl-3"></div>
 
-                    <div class="col-12 col-sm-12 col-lg-5 col-xl-5">
-                        <input type="number" name="mnozstvo" placeholder="mnozstvo" required value="{{old('mnozstvo')}}">
-                        <span class="chyba">@error('mnozstvo'){{$message}} @enderror</span>
+                    <div class="col-12 col-sm-12 col-lg-6 col-xl-6">
+                        <label>
+                            Zvoľte značku:
+                        </label>
+                        <select class="form-select" aria-label="Default select example" name="znacka">
+                            <option value="Nike">Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Air Jordan">Air Jordan</option>
+                            <option value="Vans">Vans</option>
+                        </select>
                     </div>
 
                     <div class=" col-12 col-sm-12 col-lg-1 col-xl-1"></div>
@@ -109,9 +116,8 @@
                 <div class=" col-12 col-sm-12 col-lg-1 col-xl-1"></div>
 
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3">
-                    <input type="text" name="znacka" placeholder="znacka"
-                           required value="{{old('znacka')}}">
-                    <span class="chyba">@error('znacka'){{$message}} @enderror</span>
+                    <input type="number" name="mnozstvo" placeholder="mnozstvo" required value="{{old('mnozstvo')}}">
+                    <span class="chyba">@error('mnozstvo'){{$message}} @enderror</span>
                 </div>
 
                 <div class=" col-12 col-sm-12 col-lg-1 col-xl-1"></div>

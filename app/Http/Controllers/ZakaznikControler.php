@@ -45,13 +45,14 @@ class ZakaznikControler extends Controller
             'mail'=> 'required|email',
             'heslo' =>'required|between:6,15'
         ]);
-        $nasielSaAdmin = false;
+        $nasielSaAdmin = DB::table('zakazniks')->where('mail','=',$request->mail)
+            ->where('heslo','=',$request->heslo)
+            ->where('id','=', 6)
+            ->get()->first();
+
         $nasielSaZakaznik = DB::table('zakazniks')->where('mail','=',$request->mail)
                                                        ->where('heslo','=',$request->heslo)
                                                        ->get()->first();
-        if($request->mail == 'admin@gmail.com' && $request->heslo == 'admin123'){
-            $nasielSaAdmin = true;
-        }
 
         if($nasielSaAdmin){
             $request->session()->put('idPrihlaseneho', $nasielSaZakaznik->id);
@@ -66,20 +67,20 @@ class ZakaznikControler extends Controller
 
     function getAll(){
             $zakaznici = Zakaznik::all();
-            return view('/prihlasenyAdmin/Zakaznici',['zakaznici'=>$zakaznici]);
-    }
-
-    function getAllDva(int $volba){
-        $zakaznici = Zakaznik::all();
-        if($volba == 1){
             return view('/prihlaseny/profil',['zakaznici'=>$zakaznici]);
-            //return redirect()->route('/prihlaseny/profil',['zakaznici'=>$zakaznici]);
-        }else {
-             return view('/prihlasenyAdmin/profilAdmin',['zakaznici'=>$zakaznici]);
-            //return redirect()->route('/prihlasenyAdmin/profilAdmin', ['zakaznici' => $zakaznici]);
-        }
     }
 
+    function getAllAdmin(){
+        $zakaznici = Zakaznik::all();
+        return view('/prihlasenyAdmin/profilAdmin',['zakaznici'=>$zakaznici]);
+
+    }
+
+    function getAllZakaznici(){
+        $zakaznici = Zakaznik::all();
+        return view('/prihlasenyAdmin/Zakaznici',['zakaznici'=>$zakaznici]);
+
+    }
 
     function updateMeno(Request $request){
         $request->validate(['meno'=>'required|between:1,255']);
@@ -87,6 +88,7 @@ class ZakaznikControler extends Controller
             ->where('id', $request->id)
             ->update(['meno' => $request->meno]);
         return redirect('/prihlaseny/profil');
+
     }
 
     function updatePriezvisko(Request $request){
@@ -117,6 +119,22 @@ class ZakaznikControler extends Controller
             ->where('id', $request->id)
             ->update(['heslo' => $request->heslo]);
         return redirect('/prihlaseny/profil');
+    }
+
+    function updateMailAdmin(Request $request){
+        $request->validate(['mail'=>'required|email|unique:zakazniks']);
+        DB::table('zakazniks')
+            ->where('id', $request->id)
+            ->update(['mail' => $request->mail]);
+        return redirect('/prihlasenyAdmin/profilAdmin');
+    }
+
+    function updateHesloAdmin(Request $request){
+        $request->validate(['heslo'=>'required|between:6,15']);
+        DB::table('zakazniks')
+            ->where('id', $request->id)
+            ->update(['heslo' => $request->heslo]);
+        return redirect('/prihlasenyAdmin/profilAdmin');
     }
 
 

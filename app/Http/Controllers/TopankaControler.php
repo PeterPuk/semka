@@ -13,10 +13,9 @@ class TopankaControler extends Controller
                 'cena' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
                 'velkost'=>'required|integer|between:30,50',
                 'nazov'=>'required|max:50',
-                'znacka' => 'required|max:50',
                 'pohlavie'=>'required|integer|between:0,1',
                 'obrazok'=> 'required|mimes:jpg,png,jpeg|max:5048',
-                'mnozstvo'=>'required|integer'
+                'mnozstvo'=>'required|integer|between:1,100000'
             ]);
 
             $novyNazovObrazku =   time() . '-' . $request->nazov . '.' .
@@ -61,11 +60,16 @@ class TopankaControler extends Controller
 
     function getPanskePrihlaseny(){
         $topanky = Topanka::all();
-        return view('/prihlaseny/panskeprihlaseny',['topanky'=>$topanky]);
+        return view('/prihlaseny/panskePrihlaseny',['topanky'=>$topanky]);
     }
     function getDamske(){
         $topanky = Topanka::all();
-        return view('/prihlaseny/damskePrihlaseny',['topanky'=>$topanky]);
+        return view('/hlavne/damske',['topanky'=>$topanky]);
+    }
+
+    function getDamskePrihlaseny(){
+        $topanky = Topanka::all();
+        return view('prihlaseny/damskePrihlaseny',['topanky'=>$topanky]);
     }
 
 

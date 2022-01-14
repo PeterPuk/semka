@@ -27,7 +27,7 @@
     <div class="obal">
         <div class="d-flex justify-content-start flex-wrap">
             @foreach ($topanky as $topanka)
-                @if($topanka->pohlavie == 0)
+                @if($topanka->pohlavie == 1)
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('Obrazky/'.$topanka->obrazok)}}" alt="Card image cap">
                         <div class="card-body">
