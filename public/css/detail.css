@@ -1,0 +1,45 @@
+
+.obal{
+    margin-top: 100px;
+    margin-bottom: 250px;
+}
+
+
+.card{
+    border-radius: 2%;
+}
+
+.obrazok{
+    border-radius: 2%;
+}
+
+.obalTextu{
+    background: white;
+    border-radius: 2%;
+}
+h4{
+    font-size: 70px;
+    color: black;
+    font-weight: bold;
+    margin-left: 13px;
+}
+
+.odstavec{
+    margin-left: 13px;
+    font-size: 35px;
+}
+
+.kupit{
+    font-size: 70px;
+    color: white;
+    background-color: black;
+    padding:5px 150px 5px 150px ;
+    border-radius: 30px;
+    margin-left: 160px;
+}
+
+.kupit:hover{
+    color: white;
+    text-decoration: underline;
+}
+

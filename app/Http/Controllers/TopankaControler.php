@@ -45,9 +45,18 @@ class TopankaControler extends Controller
         return redirect('/prihlasenyAdmin/Tenisky');
     }
 
-    function update(Request $request){
-
+    function detaily(int $id){
+        $topanka = DB::table('topankas')->where('id','=', $id)->first();
+        return view('/hlavne/detail', ['topanka'=>$topanka]);
     }
+
+    function detailyPrihlaseny(int $id){
+        $topanka = DB::table('topankas')->where('id','=', $id)->first();
+        return view('/prihlaseny/detailPrihlaseny', ['topanka'=>$topanka]);
+    }
+
+
+
     function getALl(){
         $topanky = Topanka::all();
         return view('/prihlasenyAdmin/Tenisky',['topanky'=>$topanky]);

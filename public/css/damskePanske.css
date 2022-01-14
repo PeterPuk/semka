@@ -2,7 +2,7 @@
     color: white;
     font-size: 30px;
     text-align: center;
-    line-height: 50px;~
+    line-height: 50px;
 }
 
 
@@ -29,9 +29,18 @@ h1{
     margin: 10px;
 }
 
-.obal{
-
+.carty {
+    overflow: auto ;
 }
+
+.carty > .card-body {
+    min-width: fit-content;
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
 
 
 

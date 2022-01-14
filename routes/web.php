@@ -21,6 +21,8 @@ Route::get('/hlavne/odhlasenie', [ZakaznikControler::class,'logout'])->name('hla
 Route::get('/hlavne/panske',[TopankaControler::class,'getPanske'])->name('/hlavne/panske');
 Route::get('/hlavne/damske',[TopankaControler::class,'getDamske'])->name('/hlavne/damske');
 
+Route::get('/hlavne/detail/{id}',[TopankaControler::class,'detaily']);
+
 /*--------------------ZAKAZNIK-----------*/
 Route::post('/hlavne/ulozit', [ZakaznikControler::class,'save'])->name('hlavne.ulozit');
 Route::post('/hlavne/skontroluj', [ZakaznikControler::class,'check'])->name('hlavne.skontroluj');
@@ -34,6 +36,7 @@ Route::get('/prihlaseny/profil',[ZakaznikControler::class,'getAll'])->name('/pri
 Route::get('/prihlaseny/panskePrihlaseny',[TopankaControler::class,'getPanskePrihlaseny'])->name('/prihlaseny/panskePrihlaseny');
 Route::get('/prihlaseny/damskePrihlaseny',[TopankaControler::class,'getDamskePrihlaseny'])->name('/prihlaseny/damskePrihlaseny');
 
+Route::get('/prihlaseny/detailPrihlaseny/{id}',[TopankaControler::class,'detailyPrihlaseny']);
 /*---------ADMIN---------------------------------*/
 Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyAdmin/uvodPrihlasenyAdmin');});
 Route::get('/prihlasenyAdmin/pridatTenisku',function(){return view('/prihlasenyAdmin/pridatTenisku');});
@@ -42,9 +45,11 @@ Route::post('/prihlasenyAdmin/updateMailAdmin', [ZakaznikControler::class,'updat
 Route::post('/prihlasenyAdmin/updateHesloAdmin', [ZakaznikControler::class,'updateHesloAdmin'])->name('prihlasenyAdmin.updateHesloAdmin');
 
 
+
 Route::get('/prihlasenyAdmin/profilAdmin',[ZakaznikControler::class,'getAllAdmin'])->name('/prihlasenyAdmin/profilAdmin');
 Route::get('/prihlasenyAdmin/Zakaznici',[ZakaznikControler::class,'getAllZakaznici'])->name('/prihlasenyAdmin/Zakaznici');
 Route::get('/prihlasenyAdmin/delete/{id}',[ZakaznikControler::class,'delete']);
+
 /*---------TENISKY-----------------*/
 Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/Tenisky');});
 Route::post('/prihlasenyAdmin/ulozit', [TopankaControler::class,'save'])->name('prihlasenyAdmin.ulozit');

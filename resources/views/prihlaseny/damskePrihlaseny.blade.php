@@ -24,18 +24,22 @@
     <h1>
         Dámske
     </h1>
+
+
     <div class="obal">
         <div class="d-flex justify-content-start flex-wrap">
             @foreach ($topanky as $topanka)
                 @if($topanka->pohlavie == 1)
-                    <div class="card">
-                        <img class="card-img-top" src="{{ asset('Obrazky/'.$topanka->obrazok)}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5>{{$topanka->nazov}}</h5>
-                            <p >Cena: {{$topanka->cena}}€ </p>
-                            <a href="#" class="btn btn-dark">Kúpiť</a>
+                    <a href="detailPrihlaseny/{{$topanka->id}}" class="link">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('Obrazky/'.$topanka->obrazok)}}"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h5>{{$topanka->nazov}}</h5>
+                                <p>Cena: {{$topanka->cena}}€ </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 @endif
             @endforeach
         </div>
@@ -43,3 +47,4 @@
 @endsection
 </body>
 </html>
+
