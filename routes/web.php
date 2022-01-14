@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZakaznikControler;
 use \App\Http\Controllers\TopankaControler;
+use \App\Http\Controllers\HodnotenieControler;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,7 +53,13 @@ Route::get('/prihlasenyAdmin/delete/{id}',[ZakaznikControler::class,'delete']);
 
 /*---------TENISKY-----------------*/
 Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/Tenisky');});
+
 Route::post('/prihlasenyAdmin/ulozit', [TopankaControler::class,'save'])->name('prihlasenyAdmin.ulozit');
 Route::get('/prihlasenyAdmin/Tenisky',[TopankaControler::class,'getAll'])->name('/prihlasenyAdmin/Tenisky');
 Route::get('/prihlasenyAdmin/delete/{id}',[TopankaControler::class,'delete']);
+
+
+/*-------------HODNOTENIA----------------*/
+
+Route::post('/prihlaseny/detailPrihlaseny/ulozitHodnotenie/{id}/{id_zakaznik}', [HodnotenieControler::class,'save']);
 

@@ -50,7 +50,7 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href ="/">
+                        <a class="navbar-brand" href ="/prihlaseny/uvodPrihlaseny">
                             <img src="/obrazky/logoZmensene.jpg" alt="" width="80" height="72">
 
                         </a>
