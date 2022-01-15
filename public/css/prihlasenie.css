@@ -73,6 +73,19 @@ p{
     font-size: 20px;
 }
 
+.linkRegistracia{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    margin-left: 120px;
+}
+
+.linkRegistracia:hover{
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+
 
 @media (max-width: 600px){
     h1{

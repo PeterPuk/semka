@@ -132,8 +132,6 @@
                     <ul>
                         <li><a href="#!">Formuláre</a></li>
                         <li><a href="#!">Obchodné podmienky</a></li>
-                        <li><a href="#!">Možnosť platby</a></li>
-                        <li><a href="#!">Možnosť dopravy</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-12 col-md-6 col-lg-5">

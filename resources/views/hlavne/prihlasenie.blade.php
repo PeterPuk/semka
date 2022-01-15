@@ -44,6 +44,7 @@
             @endif
 
             <input type="submit" name="potvrditPrihlasenie" value="Prihlásiť">
+            <a class="linkRegistracia" href="/hlavne/registracia">Registrácia  TU!</a>
         </div>
     </form>
 

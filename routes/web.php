@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ZakaznikControler;
 use \App\Http\Controllers\TopankaControler;
 use \App\Http\Controllers\HodnotenieControler;
+use \App\Http\Controllers\ObjednavkaControler;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,12 @@ Route::get('/prihlaseny/profil',[ZakaznikControler::class,'getAll'])->name('/pri
 Route::get('/prihlaseny/panskePrihlaseny',[TopankaControler::class,'getPanskePrihlaseny'])->name('/prihlaseny/panskePrihlaseny');
 Route::get('/prihlaseny/damskePrihlaseny',[TopankaControler::class,'getDamskePrihlaseny'])->name('/prihlaseny/damskePrihlaseny');
 
+/*-------------------OBJEDNAVKA------------------*/
+Route::get('/prihlaseny/detailPrihlaseny/objednavka/{id_teniska}',[ObjednavkaControler::class, 'presunNaObjednavkuTenisky']);
+Route::get('/prihlaseny/objednavkaInfo', function () {return view('/prihlaseny/objednavkaInfo');});
+
+
+
 Route::get('/prihlaseny/detailPrihlaseny/{id}',[TopankaControler::class,'detailyPrihlaseny']);
 /*---------ADMIN---------------------------------*/
 Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyAdmin/uvodPrihlasenyAdmin');});
@@ -61,4 +68,5 @@ Route::get('/prihlasenyAdmin/delete/{id}',[TopankaControler::class,'delete']);
 /*-------------HODNOTENIA----------------*/
 
 Route::post('/prihlaseny/detailPrihlaseny/ulozitHodnotenie/{id}/{id_zakaznik}', [HodnotenieControler::class,'save']);
+Route::post('/prihlaseny/detailPrihlaseny/objednavka/ulozitObjednavku/{id_teniska}/{id_zakaznik}', [ObjednavkaControler::class,'save']);
 

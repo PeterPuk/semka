@@ -34,7 +34,7 @@
                     <p class="odstavec"><strong>Veľkosť:</strong> {{$topanka->velkost}} </p>
                     <p class="odstavec"><strong>Značka:</strong> {{$topanka->znacka}} </p>
                     <p class="odstavec"><strong>Počet kusov na sklade:</strong> {{$topanka->mnozstvo}}</p>
-                    <a class="kupit" href="#">Kúpiť</a>
+                    <a class="kupit" href="objednavka/{{$topanka->id}}">Kúpiť</a>
 
                 </div>
             </div>
