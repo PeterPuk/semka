@@ -17,6 +17,7 @@ use \App\Http\Controllers\ObjednavkaControler;
 */
 
 Route::get('/', function () {return view('/hlavne/uvod');});
+
 Route::get('/hlavne/registracia',function(){return view('hlavne/registracia');});
 Route::get('/hlavne/prihlasenie',function(){return view('hlavne.prihlasenie');});
 Route::get('/hlavne/odhlasenie', [ZakaznikControler::class,'logout'])->name('hlavne.prihlasenie');

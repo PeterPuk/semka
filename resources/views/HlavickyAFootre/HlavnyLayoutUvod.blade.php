@@ -49,9 +49,6 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#">Domov</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="/hlavne/damske">Dámske</a>
                                 </li>
                                 <li class="nav-item">
@@ -116,8 +113,8 @@
             <div class="col-6 col-sm-12 col-md-6 col-lg-5">
                 <h3>K nákupu</h3>
                 <ul>
-                    <li><a href="#!">Formuláre</a></li>
-                    <li><a href="#!">Obchodné podmienky</a></li>
+                    <li><a href="#">Formuláre</a></li>
+                    <li><a href="#">Obchodné podmienky</a></li>
                 </ul>
             </div>
             <div class="col-6 col-sm-12 col-md-6 col-lg-5">
