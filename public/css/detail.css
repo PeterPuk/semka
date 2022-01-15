@@ -1,7 +1,7 @@
 
 .obal{
     margin-top: 20px;
-    margin-bottom: 250px;
+
 }
 
 .obalNeprihlaseny{
@@ -10,6 +10,10 @@
 
 .card{
     border-radius: 2%;
+}
+
+.carty{
+    margin-bottom: 10px;
 }
 
 .obrazok{
@@ -38,7 +42,7 @@ h4{
     background-color: black;
     padding:5px 150px 5px 150px ;
     border-radius: 30px;
-    margin-left: 160px;
+    margin-left: 10px;
 }
 
 .kupit:hover{
@@ -64,5 +68,13 @@ h4{
 
 .hodnotenie{
     background-color: white;
-
 }
+
+.chyba{
+    color: red;
+    font-size: 15px;
+    display: block;
+    margin-left: 210px;
+}
+
+

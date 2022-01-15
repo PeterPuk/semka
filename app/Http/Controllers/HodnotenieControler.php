@@ -21,8 +21,6 @@ class HodnotenieControler extends Controller
 
         $zaznamNaUlozenie = $noveHodnotenie->save();
 
-        $hodnotenia = DB::table('hodnotenias')->where('id_teniska','=',$id);
-
         if($zaznamNaUlozenie){
             return redirect('prihlaseny/detailPrihlaseny/'.$id)->with('uspesne','Vaše hodnotenie bolo úspešne  pridané.');
 

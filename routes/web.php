@@ -44,8 +44,7 @@ Route::get('/prihlasenyAdmin/pridatTenisku',function(){return view('/prihlasenyA
 
 Route::post('/prihlasenyAdmin/updateMailAdmin', [ZakaznikControler::class,'updateMailAdmin'])->name('prihlasenyAdmin.updateMailAdmin');
 Route::post('/prihlasenyAdmin/updateHesloAdmin', [ZakaznikControler::class,'updateHesloAdmin'])->name('prihlasenyAdmin.updateHesloAdmin');
-
-
+Route::get('/prihlasenyADmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyADmin/uvodPrihlasenyAdmin');});
 
 Route::get('/prihlasenyAdmin/profilAdmin',[ZakaznikControler::class,'getAllAdmin'])->name('/prihlasenyAdmin/profilAdmin');
 Route::get('/prihlasenyAdmin/Zakaznici',[ZakaznikControler::class,'getAllZakaznici'])->name('/prihlasenyAdmin/Zakaznici');

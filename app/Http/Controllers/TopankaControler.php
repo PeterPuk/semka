@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Zakaznik;
 use App\Rules\PohlavieRule;
 use Illuminate\Http\Request;
 use App\Models\Topanka;
@@ -52,7 +53,10 @@ class TopankaControler extends Controller
 
     function detailyPrihlaseny(int $id){
         $topanka = DB::table('topankas')->where('id','=', $id)->first();
-        return view('/prihlaseny/detailPrihlaseny', ['topanka'=>$topanka]);
+        $hodnotenia = DB::table('hodnotenies')->where('id_teniska','=', $id)->get();
+
+        $zakaznici = DB::table('zakazniks')->select('meno','id')->get();
+        return view('/prihlaseny/detailPrihlaseny', ['topanka'=>$topanka,'hodnotenia'=> $hodnotenia, 'zakaznici' => $zakaznici]);
     }
 
 

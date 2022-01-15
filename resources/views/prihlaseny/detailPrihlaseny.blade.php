@@ -75,7 +75,7 @@
 
                     <div class="col-12 col-sm-12 col-lg-6 col-x-6">
                     <textarea name="hodnotenie" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3"
-                              placeholder="Napíšte hodnotenie..." required>
+                              value="Napíšte hodnotenie..." required>
 
                     </textarea>
 
@@ -102,7 +102,23 @@
             <div class="col-12 col-sm-12 col-lg-4 col-x-4"></div>
 
             <div class="col-12 col-sm-12 col-lg-4 col-x-4">
-)
+                @foreach($hodnotenia as $hod)
+                    <div class="card carty">
+                        @foreach($zakaznici as $zakaznik)
+                            @if($hod->id_zakaznik == $zakaznik->id)
+                                <div class="card-header">
+                                    <strong>Zákazník: </strong>{{$zakaznik->meno}}
+                                </div>
+                            @endif
+
+                        @endforeach
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p><strong>Hodnotenie: </strong>{{$hod->hodnotenie}}</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
             <div class="col-12 col-sm-12 col-lg-4 col-x-4"></div>

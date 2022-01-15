@@ -94,7 +94,7 @@ return [
     'min' => [
         'numeric' => 'Vase :attribute musi  :min.',
         'file' => 'The :attribute must be at least :min kilobytes.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'string' => ':attribute musi mat aspon  :min znaky.',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'multiple_of' => 'The :attribute must be a multiple of :value.',
