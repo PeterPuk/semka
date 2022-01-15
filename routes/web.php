@@ -64,6 +64,8 @@ Route::post('/prihlasenyAdmin/ulozit', [TopankaControler::class,'save'])->name('
 Route::get('/prihlasenyAdmin/Tenisky',[TopankaControler::class,'getAll'])->name('/prihlasenyAdmin/Tenisky');
 Route::get('/prihlasenyAdmin/delete/{id}',[TopankaControler::class,'delete']);
 
+Route::get('/prihlasenyAdmin/prejdiNaFormular/{id}',[TopankaControler::class,'prejdiNaFormular']);
+Route::post('/prihlasenyAdmin/prejdiNaFormular/upravit/{id}',[TopankaControler::class,'upravit']);
 
 /*-------------HODNOTENIA----------------*/
 

@@ -57,9 +57,8 @@
                 <td>{{$topanka->pohlavie}}</td>
                 <td>{{$topanka->mnozstvo}}</td>
                 <td>
-                    <a href="delete/{{$topanka->id}}"
-                       class="btn btn-danger">Vymazať
-                    </a>
+                    <a href="prejdiNaFormular/{{$topanka->id}}"class="btn btn-success">Upraviť</a>
+                    <a href="delete/{{$topanka->id}}"class="btn btn-danger">Vymazať</a>
                 </td>
         @endforeach
         </tbody>

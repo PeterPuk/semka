@@ -46,6 +46,32 @@ class TopankaControler extends Controller
         return redirect('/prihlasenyAdmin/Tenisky');
     }
 
+    function prejdiNaFormular(int $id){
+        $topanka = DB::table('topankas')->where('id','=', $id)->first();
+        return view('prihlasenyAdmin/upravitTenisku',['topanka'=>$topanka]);
+    }
+
+    function upravit(Request $request, $id){
+        $request->validate([
+            'cena' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
+            'velkost'=>'required|integer|between:30,50',
+            'nazov'=>'required|max:50',
+            'pohlavie'=>'required|integer|between:0,1',
+            'mnozstvo'=>'required|integer|between:1,100000'
+        ]);
+        $topanka = Topanka::find($id);
+        $topanka->cena =$request->cena;
+        $topanka->velkost = $request->velkost;
+        $topanka->nazov = $request->nazov;
+        $topanka->znacka = $request->znacka;
+        $topanka->pohlavie = $request->pohlavie;
+        $topanka->mnozstvo = $request->mnozstvo;
+        $topanka->save();
+        return redirect('prihlasenyAdmin/Tenisky');
+    }
+
+
+
     function detaily(int $id){
         $topanka = DB::table('topankas')->where('id','=', $id)->first();
         return view('/hlavne/detail', ['topanka'=>$topanka]);
