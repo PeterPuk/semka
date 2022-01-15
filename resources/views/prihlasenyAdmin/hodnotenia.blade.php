@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tenisky</title>
+    <title>Hodnotenia</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -24,43 +24,25 @@
     <body>
 
     <h1 class="hlavnyNadpis">
-        Tenisky
+        Hodnotenia
     </h1>
-    <div class="pridatTenisku">
-        <a href="/prihlasenyAdmin/pridatTenisku"
-           class="btn btn-secondary">Pridať tenisku
-        </a>
-    </div>
 
     <table class="table table-striped table-dark  table-hover overflow-x:auto">
         <thead>
         <tr>
             <th>id</th>
-            <th>cena v € </th>
-            <th>velkost</th>
-            <th>nazov</th>
-            <th>znacka</th>
-            <th>obrazok</th>
-            <th>pohlavie(zena-1, muz -0)</th>
-            <th>mnozstvo(ks)</th>
-            <th>operacia</th>
+            <th>id_zakaznik</th>
+            <th>id_teniska</th>
+            <th>hodnotenie</th>
         </tr>
         </thead>
         <tbody>
-        @foreach ($topanky as $topanka)
+        @foreach ($hodnotenia as $hodnotenie)
             <tr class="w-auto">
-                <td>{{ $topanka->id }}</td>
-                <td>{{ $topanka->cena }}</td>
-                <td>{{ $topanka->velkost }}</td>
-                <td>{{ $topanka->nazov }}</td>
-                <td>{{ $topanka->znacka }}</td>
-                <td>{{ $topanka->obrazok }}</td>
-                <td>{{$topanka->pohlavie}}</td>
-                <td>{{$topanka->mnozstvo}}</td>
-                <td>
-                    <a href="prejdiNaFormular/{{$topanka->id}}"class="btn btn-success">Upraviť</a>
-                    <a href="delete/{{$topanka->id}}"class="btn btn-danger">Vymazať</a>
-                </td>
+                <td>{{ $hodnotenie->id }}</td>
+                <td>{{ $hodnotenie->id_zakaznik }}</td>
+                <td>{{ $hodnotenie->id_teniska }}</td>
+                <td>{{ $hodnotenie->hodnotenie }}</td>
         @endforeach
         </tbody>
     </table>

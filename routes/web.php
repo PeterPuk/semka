@@ -41,8 +41,7 @@ Route::get('/prihlaseny/damskePrihlaseny',[TopankaControler::class,'getDamskePri
 /*-------------------OBJEDNAVKA------------------*/
 Route::get('/prihlaseny/detailPrihlaseny/objednavka/{id_teniska}',[ObjednavkaControler::class, 'presunNaObjednavkuTenisky']);
 Route::get('/prihlaseny/objednavkaInfo', function () {return view('/prihlaseny/objednavkaInfo');});
-
-
+Route::get('/prihlasenyAdmin/objednavky',[ObjednavkaControler::class,'getAll']);
 
 Route::get('/prihlaseny/detailPrihlaseny/{id}',[TopankaControler::class,'detailyPrihlaseny']);
 /*---------ADMIN---------------------------------*/
@@ -63,6 +62,7 @@ Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/T
 Route::post('/prihlasenyAdmin/ulozit', [TopankaControler::class,'save'])->name('prihlasenyAdmin.ulozit');
 Route::get('/prihlasenyAdmin/Tenisky',[TopankaControler::class,'getAll'])->name('/prihlasenyAdmin/Tenisky');
 Route::get('/prihlasenyAdmin/delete/{id}',[TopankaControler::class,'delete']);
+Route::get('/prihlasenyAdmin/deleteObjednavku/{id}',[ObjednavkaControler::class,'delete']);
 
 Route::get('/prihlasenyAdmin/prejdiNaFormular/{id}',[TopankaControler::class,'prejdiNaFormular']);
 Route::post('/prihlasenyAdmin/prejdiNaFormular/upravit/{id}',[TopankaControler::class,'upravit']);
@@ -71,4 +71,7 @@ Route::post('/prihlasenyAdmin/prejdiNaFormular/upravit/{id}',[TopankaControler::
 
 Route::post('/prihlaseny/detailPrihlaseny/ulozitHodnotenie/{id}/{id_zakaznik}', [HodnotenieControler::class,'save']);
 Route::post('/prihlaseny/detailPrihlaseny/objednavka/ulozitObjednavku/{id_teniska}/{id_zakaznik}', [ObjednavkaControler::class,'save']);
+
+Route::get('/prihlasenyAdmin/hodnotenia',[HodnotenieControler::class,'getAll']);
+
 

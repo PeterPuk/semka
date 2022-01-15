@@ -44,4 +44,14 @@ class ObjednavkaControler extends Controller
         return view('/prihlaseny/objednavkaInfo');
 
     }
+
+    function getALl(){
+        $objednavky = Objednavka::all();
+        return view('/prihlasenyAdmin/objednavky',['objednavky'=>$objednavky]);
+    }
+
+    function delete($id){
+        DB::table('objednavkas')->where('id','=',$id)->delete();
+        return redirect('/prihlasenyAdmin/objednavky');
+    }
 }

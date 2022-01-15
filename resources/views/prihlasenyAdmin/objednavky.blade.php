@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tenisky</title>
+    <title>Objednávky</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -24,42 +24,36 @@
     <body>
 
     <h1 class="hlavnyNadpis">
-        Tenisky
+        Objednávky
     </h1>
-    <div class="pridatTenisku">
-        <a href="/prihlasenyAdmin/pridatTenisku"
-           class="btn btn-secondary">Pridať tenisku
-        </a>
-    </div>
 
     <table class="table table-striped table-dark  table-hover overflow-x:auto">
         <thead>
         <tr>
             <th>id</th>
-            <th>cena v € </th>
-            <th>velkost</th>
-            <th>nazov</th>
-            <th>znacka</th>
-            <th>obrazok</th>
-            <th>pohlavie(zena-1, muz -0)</th>
-            <th>mnozstvo(ks)</th>
+            <th>id_teniska </th>
+            <th>id_zakaznik</th>
+            <th>meno</th>
+            <th>priezvisko</th>
+            <th>adresa</th>
+            <th>psc</th>
+            <th>doprava</th>
             <th>operacia</th>
         </tr>
         </thead>
         <tbody>
-        @foreach ($topanky as $topanka)
+        @foreach ($objednavky as $objednavka)
             <tr class="w-auto">
-                <td>{{ $topanka->id }}</td>
-                <td>{{ $topanka->cena }}</td>
-                <td>{{ $topanka->velkost }}</td>
-                <td>{{ $topanka->nazov }}</td>
-                <td>{{ $topanka->znacka }}</td>
-                <td>{{ $topanka->obrazok }}</td>
-                <td>{{$topanka->pohlavie}}</td>
-                <td>{{$topanka->mnozstvo}}</td>
+                <td>{{ $objednavka->id }}</td>
+                <td>{{ $objednavka->id_teniska }}</td>
+                <td>{{ $objednavka->id_zakaznik }}</td>
+                <td>{{ $objednavka->meno }}</td>
+                <td>{{ $objednavka->priezvisko }}</td>
+                <td>{{ $objednavka->adresa }}</td>
+                <td>{{$objednavka->psc}}</td>
+                <td>{{$objednavka->doprava}}</td>
                 <td>
-                    <a href="prejdiNaFormular/{{$topanka->id}}"class="btn btn-success">Upraviť</a>
-                    <a href="delete/{{$topanka->id}}"class="btn btn-danger">Vymazať</a>
+                    <a href="deleteObjednavku/{{$objednavka->id}}"class="btn btn-danger">Vybaviť</a>
                 </td>
         @endforeach
         </tbody>

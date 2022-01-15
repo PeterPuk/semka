@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hodnotenie;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class HodnotenieControler extends Controller
 {
     function save(Request $request, $id, $id_zakaznik){
@@ -27,5 +27,15 @@ class HodnotenieControler extends Controller
         }else{
             return redirect('prihlaseny/detailPrihlaseny/'.$id)->with('chyba','Vaše hodnotenie sa nepodarilo pridať.');
         }
+    }
+
+    function getALl(){
+        $hodnotenia = Hodnotenie::all();
+        return view('/prihlasenyAdmin/hodnotenia',['hodnotenia'=>$hodnotenia]);
+    }
+
+    function delete($id){
+        DB::table('hodnotenias')->where('id','=',$id)->delete();
+        return redirect('/prihlasenyAdmin/hodnotenia');
     }
 }
