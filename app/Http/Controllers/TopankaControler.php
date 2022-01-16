@@ -15,7 +15,7 @@ class TopankaControler extends Controller
                 'velkost'=>'required|integer|between:30,50',
                 'nazov'=>'required|max:50',
                 'pohlavie'=>'required|integer|between:0,1',
-                'obrazok'=> 'required|mimes:jpg,png,jpeg|max:5048',
+                'obrazok'=> 'required|mimes:jpg,png,jpeg,gif|max:5048',
                 'mnozstvo'=>'required|integer|between:1,100000'
             ]);
 

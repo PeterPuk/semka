@@ -99,13 +99,21 @@ ul{
     margin-right: 25px;
 }
 
+.Knakupu{
+    color:#3B393D;
+    text-decoration: none;
+}
 
+.Knakupu:hover{
+    color: black;
+    text-decoration: underline;
+}
 
-h3{
-    font-size: 50px;
+.NadpisKnakupu{
+    font-size: 38px;
     font-weight: bolder;
     color:#3B393D;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 a{

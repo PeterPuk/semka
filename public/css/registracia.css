@@ -121,3 +121,21 @@ p{
         border-radius: 15px;
     }
 }
+
+#heslo{
+    display: block;
+}
+#tel_cislo{
+    display: block;
+}
+
+#psc{
+    display: block;
+}
+
+#tlacidkoPridat{
+    border-radius: 6px;
+    border:solid gray;
+    display: block;
+    margin-left: 20px;
+}

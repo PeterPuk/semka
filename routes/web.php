@@ -20,10 +20,9 @@ Route::get('/', function () {return view('/hlavne/uvod');});
 
 Route::get('/hlavne/registracia',function(){return view('hlavne/registracia');});
 Route::get('/hlavne/prihlasenie',function(){return view('hlavne.prihlasenie');});
-Route::get('/hlavne/odhlasenie', [ZakaznikControler::class,'logout'])->name('hlavne.prihlasenie');
-Route::get('/hlavne/panske',[TopankaControler::class,'getPanske'])->name('/hlavne/panske');
-Route::get('/hlavne/damske',[TopankaControler::class,'getDamske'])->name('/hlavne/damske');
-
+Route::get('/hlavne/odhlasenie', [ZakaznikControler::class,'logout']);
+Route::get('/hlavne/panske',[TopankaControler::class,'getPanske']);
+Route::get('/hlavne/damske',[TopankaControler::class,'getDamske']);
 Route::get('/hlavne/detail/{id}',[TopankaControler::class,'detaily']);
 
 /*--------------------ZAKAZNIK-----------*/
@@ -43,8 +42,9 @@ Route::get('/prihlaseny/damskePrihlaseny',[TopankaControler::class,'getDamskePri
 Route::get('/prihlaseny/detailPrihlaseny/objednavka/{id_teniska}',[ObjednavkaControler::class, 'presunNaObjednavkuTenisky']);
 Route::get('/prihlaseny/objednavkaInfo', function () {return view('/prihlaseny/objednavkaInfo');});
 Route::get('/prihlasenyAdmin/objednavky',[ObjednavkaControler::class,'getAll']);
-
 Route::get('/prihlaseny/detailPrihlaseny/{id}',[TopankaControler::class,'detailyPrihlaseny']);
+
+
 /*---------ADMIN---------------------------------*/
 Route::get('/prihlasenyAdmin/uvodPrihlasenyAdmin',function(){return view('/prihlasenyAdmin/uvodPrihlasenyAdmin');});
 Route::get('/prihlasenyAdmin/pridatTenisku',function(){return view('/prihlasenyAdmin/pridatTenisku');});
@@ -55,7 +55,7 @@ Route::get('/prihlasenyADmin/uvodPrihlasenyAdmin',function(){return view('/prihl
 
 Route::get('/prihlasenyAdmin/profilAdmin',[ZakaznikControler::class,'getAllAdmin'])->name('/prihlasenyAdmin/profilAdmin');
 Route::get('/prihlasenyAdmin/Zakaznici',[ZakaznikControler::class,'getAllZakaznici'])->name('/prihlasenyAdmin/Zakaznici');
-Route::get('/prihlasenyAdmin/delete/{id}',[ZakaznikControler::class,'delete']);
+Route::get('/prihlasenyAdmin/deleteZakaznik/{id}',[ZakaznikControler::class,'delete']);
 
 /*---------TENISKY-----------------*/
 Route::get('/prihlasenyAdmin/Tenisky',function(){return view('/prihlasenyAdmin/Tenisky');});
@@ -72,7 +72,6 @@ Route::post('/prihlasenyAdmin/prejdiNaFormular/upravit/{id}',[TopankaControler::
 
 Route::post('/prihlaseny/detailPrihlaseny/ulozitHodnotenie/{id}/{id_zakaznik}', [HodnotenieControler::class,'save']);
 Route::post('/prihlaseny/detailPrihlaseny/objednavka/ulozitObjednavku/{id_teniska}/{id_zakaznik}', [ObjednavkaControler::class,'save']);
-
 Route::get('/prihlasenyAdmin/hodnotenia',[HodnotenieControler::class,'getAll']);
 
 

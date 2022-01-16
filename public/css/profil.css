@@ -5,7 +5,6 @@
     margin-left: 40%;
 }
 
-
 .obalovac{
     margin-left: 90px;
 }
@@ -26,11 +25,9 @@
     margin-left: 210px;
 }
 
-
 input:not([type="submit"]){
     height: 33px;
     margin-right: 15px;
-
 }
 
 .select{
@@ -46,11 +43,9 @@ p{
     color: white;
 }
 
-
 input[type="submit"]{
     cursor: pointer;
 }
-
 
 .hlavnyNadpis{
     text-transform: uppercase;
@@ -77,15 +72,12 @@ h1{
     display: block;
     color: white;
     font-size: 35px;
-
-
 }
 
 .maleMenu:hover {
     text-decoration: underline;
     color: white;
 }
-
 
 .pridatTenisku{
     display: flex;

@@ -1,9 +1,22 @@
 <link rel="stylesheet" href="{{asset('css/footerAheader.css')}}" type="text/css">
+<head>
+    <meta charset="UTF-8">
+    @yield('title')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    @yield('scriptCss')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
 <header>
     <div class="top-bar nav-down">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-8"><!-- Zaciatok -->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-8">
                     <a href="tel:0907071723" class="hlavne">
                         <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor"
                              class="bi bi-phone" viewBox="-17 -4 30 30">
@@ -111,14 +124,14 @@
                 Všetko čo potrebujete
             </h1>
             <div class="col-6 col-sm-12 col-md-6 col-lg-5">
-                <h3>K nákupu</h3>
+                <h3 class ="NadpisKnakupu">K nákupu</h3>
                 <ul>
-                    <li><a href="#">Formuláre</a></li>
-                    <li><a href="#">Obchodné podmienky</a></li>
+                    <li><a class="Knakupu" href="#">Formuláre</a></li>
+                    <li><a class="Knakupu"href="#">Obchodné podmienky</a></li>
                 </ul>
             </div>
             <div class="col-6 col-sm-12 col-md-6 col-lg-5">
-                <h3>Nájdete nás</h3>
+                <h3 class ="NadpisKnakupu">Nájdete nás</h3>
                 <ul>
                     <li class="float">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -143,7 +156,7 @@
                 </ul>
             </div>
             <div class="col-12 col-sm-12 col-lg-2">
-                <h3>Adresa</h3>
+                <h3 class ="NadpisKnakupu">Adresa</h3>
                 <ul>
                     <li>SneakField s.r.o</li>
                     <li>Štúrova10</li>

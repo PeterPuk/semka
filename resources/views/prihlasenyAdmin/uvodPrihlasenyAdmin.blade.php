@@ -1,48 +1,16 @@
 @extends('HlavickyAFootre.layoutPrihlasenyAdmin')
-<head>
-    <meta charset="UTF-8">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+@section('title')
+    <title>Úvod </title>
+@endsection
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <link rel="stylesheet" href="{{asset('css/uvod.css')}}" type="text/css">
-</head>
-
+@section('scriptCss')
+    <script src="{{asset('javascript/animacia.js')}}"></script>
+    <link rel="stylesheet" href={{asset('css/uvod.css')}}>
+@endsection
 @section('hlavnyObsah')
     <!DOCTYPE html>
     <html lang="en">
-    <script>
-        window.addEventListener('scroll', () => {
-            let obsah = document.querySelector('.rowSpecial');
-            let poziciaObsahu = obsah.getBoundingClientRect().top;
-            let poziciaObrazovky = window.innerHeight;
-            if (poziciaObsahu < poziciaObrazovky) {
-                obsah.classList.add('active');
-            } else {
-                obsah.classList.remove('active');
-            }
-        });
-        window.addEventListener('scroll', () => {
-            let obsah = document.querySelector('.rowSpecialDva');
-            let poziciaObsahu = obsah.getBoundingClientRect().top;
-            let poziciaObrazovky = window.innerHeight;
-            if (poziciaObsahu < poziciaObrazovky) {
-                obsah.classList.add('active');
-            } else {
-                obsah.classList.remove('active');
-            }
-        });
-    </script>
     <body>
-    <!--Hlavny obsah-->
     <h1 class="hlavnyNadpis">
         Obchod, kde sa sny o teniskách stávajú realitou.
     </h1>
@@ -99,34 +67,24 @@
 
         </div>
         <div class="rowSpecial">
-            <h1>
-                Kto sme?
-            </h1>
-            <div class="col-3">
-
-            </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 odstavec">
                 <p class="odstavecUvod">
-                    Sme firma plná mladých, kreatívnych a pracovitých ľudí. Každý z nich sa vie vcítiť do potrieb
-                    zákazníkov
-                    akéhokoľvek veku. Obuv, ktorú určite ocení aj ten najnáročnejčí človek na svete. Líšime sa od
-                    druhých
-                    hlavne výnimočnými modelmi športovej a vychádzkovej obuvy. Veľa z nich nie je možné len tak kúpiť a
-                    je
-                    potrebné si ju vyhľadať, čo trvá čas. A preto sme tu my ktorí to urobia za Vás.
+                <h1>
+                    Kto sme?
+                </h1>
+                Sme firma plná mladých, kreatívnych a pracovitých ľudí. Každý z nich sa vie vcítiť do potrieb
+                zákazníkov
+                akéhokoľvek veku. Obuv, ktorú určite ocení aj ten najnáročnejčí človek na svete. Líšime sa od
+                druhých
+                hlavne výnimočnými modelmi športovej a vychádzkovej obuvy. Veľa z nich nie je možné len tak kúpiť a
+                je
+                potrebné si ju vyhľadať, čo trvá čas. A preto sme tu my ktorí to urobia za Vás.
 
                 </p>
-
-                <div class="col-10">
-
-                </div>
             </div>
         </div>
 
         <img src="/obrazky/logoZmensene2.jpg" alt="" class="centrovanyObrazok">
-
-        <!--Hlavny obsah KONIEC-->
-
     </div>
     @endsection
     </body>

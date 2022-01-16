@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Zakaznik;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ZakaznikControler extends Controller
 {
@@ -16,7 +17,6 @@ class ZakaznikControler extends Controller
     }
 
     function save(Request $request){
-        //return $request->input();
         $request->validate([
             'meno'=>'required|between:1,255',
             'priezvisko'=>'required|between:1,255',
@@ -30,7 +30,7 @@ class ZakaznikControler extends Controller
         $zakaznik->priezvisko = $request->priezvisko;
         $zakaznik->mail = $request->mail;
         $zakaznik->tel_cislo = $request->tel_cislo;
-        $zakaznik->heslo = $request->heslo;
+        $zakaznik->heslo = Hash::make($request->heslo);
         $zaznamNaUlozenie = $zakaznik->save();
 
         if($zaznamNaUlozenie){
@@ -46,23 +46,27 @@ class ZakaznikControler extends Controller
             'heslo' =>'required|between:6,15'
         ]);
         $nasielSaAdmin = DB::table('zakazniks')->where('mail','=',$request->mail)
-            ->where('heslo','=',$request->heslo)
-            ->where('id','=', 6)
-            ->get()->first();
+            ->where('id','=', 10)->first();
 
-        $nasielSaZakaznik = DB::table('zakazniks')->where('mail','=',$request->mail)
-                                                       ->where('heslo','=',$request->heslo)
-                                                       ->get()->first();
+        $zakaznik = DB::table('zakazniks')->where('mail','=',$request->mail)->first();
 
         if($nasielSaAdmin){
-            $request->session()->put('idPrihlaseneho', $nasielSaZakaznik->id);
-            return redirect('/prihlasenyAdmin/uvodPrihlasenyAdmin');
-        }else if($nasielSaZakaznik){
-            $request->session()->put('idPrihlaseneho', $nasielSaZakaznik->id);
-            return redirect('/prihlaseny/uvodPrihlaseny');
-        }else{
-            return back()->with('chyba','Zadali ste zlé prihlasovacie údaje.');
+            if(Hash::check($request->heslo,$nasielSaAdmin->heslo)){
+                $request->session()->put('idPrihlaseneho', $nasielSaAdmin->id);
+                return redirect('/prihlasenyAdmin/uvodPrihlasenyAdmin');
+            }else{
+                return back()->with('chyba','Zadali ste zlé prihlasovacie údaje.');
+            }
+
+        }else if($zakaznik){
+            if(Hash::check($request->heslo,$zakaznik->heslo)){
+                $request->session()->put('idPrihlaseneho', $zakaznik->id);
+                return redirect('/prihlaseny/uvodPrihlaseny');
+            }else{
+                return back()->with('chyba','Zadali ste zlé prihlasovacie údaje.');
+            }
         }
+
     }
 
     function getAll(){
@@ -115,9 +119,10 @@ class ZakaznikControler extends Controller
 
     function updateHeslo(Request $request){
         $request->validate(['heslo'=>'required|between:6,15']);
+        $hesloNaZmenu = Hash::make($request->heslo);
         DB::table('zakazniks')
             ->where('id', $request->id)
-            ->update(['heslo' => $request->heslo]);
+            ->update(['heslo' => $hesloNaZmenu]);
         return redirect('/prihlaseny/profil');
     }
 
